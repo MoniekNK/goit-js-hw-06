@@ -10,12 +10,10 @@ const ingredients = [
 // Pobierz element ul#ingredients z dokumentu
 const ulElement = document.getElementById("ingredients");
 
-ingredients.forEach((ingredient) => {
+const ingredientsArr = ingredients.map((ingredient) => {
   const liElement = document.createElement("li");
-
   liElement.textContent = ingredient;
-
   liElement.classList.add("item");
-
-  ulElement.appendChild(liElement);
+  return liElement;
 });
+ulElement.append(...ingredientsArr);
